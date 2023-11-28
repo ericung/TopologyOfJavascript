@@ -50,7 +50,7 @@ function pumpingLemmaGenerator(n)
 }
 ```
 
-### 4. The Pumping Lemma Decider of two Decision Functions
+### 4. The Pumping Lemma Decider of Two Decision Functions
 
 1. c1 + x + c2 = c1 -x + c2
 
