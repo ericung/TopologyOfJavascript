@@ -10,7 +10,7 @@
 
 ### 3. Pumping Lemma Generator
 
-c1 + m(x) + c2 is a Generator
+g(x) = c1 + m(x) + c2 is a generator function for the pumping lemma
 
 ``` js
 function pumpingLemmaGenerator(n)
