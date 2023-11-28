@@ -52,6 +52,8 @@ function pumpingLemmaGenerator(n)
 
 ### 4. The Pumping Lemma Decider of Two Decision Functions
 
+**Pumping Lemma Decider**
+
 1. c1 + x + c2 = c1 -x + c2
 
 2. c1 + x + c2 != c1 -x + c2
@@ -66,9 +68,9 @@ If there exists a decider for a pumping lemma language, there exists a generator
 
 Proof
 ```
-Given c1 + x + c2 = c1 -x + c2 and c1 + x + c2 != c1 -x + c2 forming the decider for the pumping lemma language
+Given c1 + x + c2 = c1 -x + c2 and c1 + x + c2 != c1 -x + c2 forming the pumping lemma language decider
 Then c1 + x + c2 is the left hand side of both decision functions forming a function
-Hence c1 + x + c2 is a generator function
+By definition, c1 + x + c2 is a generator function
 ```
 
 x is a monomial of one degree meaning that for the pumping lemma language, only one generator function is needed form a generator.
@@ -178,6 +180,8 @@ function pumpingLemmaDecider(input)
 
 ### 5. The Pumping Lemma Decision Function of Equivalence
 
+First, this equation needs to be true
+
 c1 + x + c2 = c1 - x + c2
 
 ``` js
@@ -217,7 +221,11 @@ function pumpingLemmaDeciderAena(input)
 
 ### 6. The Pumping Lemma Decision Function of Reversal
 
+Then this equation also has to be true
+
 c1 + x + c2 != c1 - x + c2
+
+We are taking the string, s, such that s is in c1 + x + c2 on the left hand side
 
 ``` js
 // c1 + x + c2 != c1 -x + c2
