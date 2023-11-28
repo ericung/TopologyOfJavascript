@@ -56,9 +56,13 @@ function pumpingLemmaGenerator(n)
 
 2. c1 + x + c2 != c1 -x + c2
 
+**Definition of Deciders**
+
 A decider is a set of decision functions that decide if a string is in the language
 
-If there exists a decider, there exists a pumping lemma generator for the decider
+**Theorem of Generator Of A Deciders**
+
+If there exists a decider for a pumping lemma language, there exists a generator for the decider of a pumping lemma language
 
 Proof
 ```
