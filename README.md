@@ -8,7 +8,9 @@
 
 ![02PumpingLemma](Resources/02PumpingLemma.jpg)
 
-The pumping lemma generator
+### 3. Pumping Lemma Generator
+
+c1 + m(x) + c2 is a Generator
 
 ``` js
 function pumpingLemmaGenerator(n)
@@ -48,12 +50,22 @@ function pumpingLemmaGenerator(n)
 }
 ```
 
-The pumping lemma decider of the two equations
+### 4. The Pumping Lemma Decider of two Decision Functions
 
 1. c1 + x + c2 = c1 -x + c2
 
 2. c1 + x + c2 != c1 -x + c2
 
+A decider is a set of decision functions that decide if a string is in the language
+
+If there exists a decider, there exists a pumping lemma generator for the decider
+
+Proof
+```
+Given c1 + x + c2 = c1 -x + c2 and c1 + x + c2 != c1 -x + c2 in decider
+Then c1 + x + c2 is the left hand side of both decision functions
+Hence c1 + x + c2 is the generator
+```
 
 ``` js
 // c1 + x + c2 = c1 - x + c2
@@ -158,9 +170,9 @@ function pumpingLemmaDecider(input)
 }
 ```
 
-The pumping lemma decider of equivalence
+### 5. The Pumping Lemma Decision Function of Equivalence
 
-c1 + x + c2 != c1 - x + c2
+c1 + x + c2 = c1 - x + c2
 
 ``` js
 // c1 + x +  c2 = c1 + -x + c2
@@ -188,14 +200,19 @@ function pumpingLemmaDeciderAena(input)
 	var c2_2len = c2_2.length;
 	var c2_n = c2_1len + c2_2len;
 
-	// the length function through equivalence through looping
-	var decider_total = c1xlen + c2_1len + c2_2len;
-
-	return decider_total === input.length;
+	// equivalence through the length function
+	// len(c1) + len(xlen*x) + len(c2) = len(c1) + len(xlen)y + len(c2)
+	// len(xlen*x)/len(xlen) = y <=> len(xlen*x)%len(xlen) === y such that y is the remainder
+	// y is 0 because we are using equivalence meaning we are taking x/x in Q*
+	
+	return (input.length - c1_n - c2_n) % xlen === 0;
 }
 ```
 
-The pumping lemma decider of reversal
+### 6. The Pumping Lemma Decision Function of Reversal
+
+c1 + x + c2 != c1 - x + c2
+
 ``` js
 // c1 + x + c2 != c1 -x + c2
 // anena => a != -a 
@@ -269,6 +286,7 @@ function pumpingLemmaDeciderAnena(input)
 		}
 	}
 
+	// just remove extra 0
 	path.pop();
 
 	// decider for c2 for reversal of a != -a
@@ -304,7 +322,8 @@ function pumpingLemmaDeciderAnena(input)
 		finishZ = true;
 	}
 
-	console.log(path);
+	// output path
+	console.log(path.join(""));
 
 	return true;
 }

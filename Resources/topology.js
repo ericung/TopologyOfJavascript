@@ -117,6 +117,7 @@ function pumpingLemmaDecider(input)
 
 			y++;
 		}
+
 	}
 
 	// this variable is equivalence through looping
@@ -165,8 +166,12 @@ function pumpingLemmaDeciderAena(input)
 	var c2_2len = c2_2.length;
 	var c2_n = c2_1len + c2_2len;
 
-	// equivalence using the length function
-	return (input.length - c1_n - c2_n)%xlen === 0;
+	// equivalence through the length function
+	// len(c1) + len(xlen*x) + len(c2) = len(c1) + len(xlen)y + len(c2)
+	// len(xlen*x)/len(xlen) = y <=> len(xlen*x)%len(xlen) === y such that y is the remainder
+	// y is 0 because we are using equivalence meaning we are taking x/x in Q*
+	
+	return (input.length - c1_n - c2_n) % xlen === 0;
 }
 
 // c1 + x + c2 != c1 -x + c2
