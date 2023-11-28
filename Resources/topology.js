@@ -1,4 +1,4 @@
-function pumpingLemma(int n)
+function pumpingLemma(n)
 {
 
 	var string = "";
@@ -8,9 +8,11 @@ function pumpingLemma(int n)
 
 	for (let i = 0; i < n; i++)
 	{
-		string += "text1";
+		string += "-loop-";
 	}
 
 	string += " world";
 	string += " hijklmno";
+
+	return string;
 }
