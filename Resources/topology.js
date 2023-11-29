@@ -288,3 +288,18 @@ function pumpingLemmaDeciderReversal(input)
 
 // ENDREGION: PumpingLemmaDecider
 
+// REGION: onChange()
+function onChange()
+{
+	var input = document.getElementById("input").value;
+	var generator = pumpingLemmaGenerator(input);
+	document.getElementById("generator").value = generator;
+
+	var string = document.getElementById("string").value;
+	var decider = pumpingLemmaDecider(string);
+	var equivalence = pumpingLemmaDeciderEquivalence(string);
+	var reversal = pumpingLemmaDeciderReversal(string);
+	document.getElementById("decider").value = decider;
+	document.getElementById("equivalence").value = equivalence;
+	document.getElementById("reversal").value = reversal;
+}
