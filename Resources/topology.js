@@ -142,8 +142,8 @@ function pumpingLemmaDecider(input)
 }
 
 // c1 + x +  c2 = c1 + -x + c2
-// aena => a = -a
-function pumpingLemmaDeciderAena(input)
+// equivalence => a = -a
+function pumpingLemmaDeciderEquivalence(input)
 {
 
 	// set the value of the strings
@@ -175,8 +175,8 @@ function pumpingLemmaDeciderAena(input)
 }
 
 // c1 + x + c2 != c1 -x + c2
-// anena => a != -a 
-function pumpingLemmaDeciderAnena(input)
+// reversal => a != -a 
+function pumpingLemmaDeciderReversal(input)
 {
 	// set the value of the strings
 	var c1_1 = "abcdefg ";

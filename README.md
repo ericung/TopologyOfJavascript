@@ -10,7 +10,7 @@
 
 ### 3. Pumping Lemma Generator
 
-g(x) = c1 + m(x) + c2 is a generator function for the pumping lemma
+g(x) = c1 + x + c2 is a generator function for the pumping lemma
 
 ``` js
 function pumpingLemmaGenerator(n)
@@ -52,26 +52,21 @@ function pumpingLemmaGenerator(n)
 
 ### 4. The Pumping Lemma Decider of Two Decision Functions
 
-**Pumping Lemma Decider**
-
-1. c1 + x + c2 = c1 -x + c2
-
+**Pumping Lemma Decider**\
+1. c1 + x + c2 = c1 -x + c2\
 2. c1 + x + c2 != c1 -x + c2
 
-**Definition of Deciders**
-
+**Definition of Deciders**\
 A decider is a set of decision functions that decide if a string is in the language
 
-**Theorem of Generator Of A Deciders**
-
+**Theorem of Generator Of A Deciders**\
 If there exists a decider for a pumping lemma language, there exists a generator for the decider of a pumping lemma language
 
-Proof
-```
-Given c1 + x + c2 = c1 -x + c2 and c1 + x + c2 != c1 -x + c2 forming the pumping lemma language decider
-Then c1 + x + c2 is the left hand side of both decision functions forming a function
-By definition, c1 + x + c2 is a generator function
-```
+Proof\
+Given c1 + x + c2 = c1 -x + c2 and c1 + x + c2 != c1 -x + c2 forming the pumping lemma language decider\
+Then c1 + x + c2 is the left hand side of both decision functions forming a function\
+By definition, c1 + x + c2 is a generator function\
+*x*
 
 x is a monomial of one degree meaning that for the pumping lemma language, only one generator function is needed form a generator.
 
@@ -186,8 +181,8 @@ c1 + x + c2 = c1 - x + c2
 
 ``` js
 // c1 + x +  c2 = c1 + -x + c2
-// aena => a = -a
-function pumpingLemmaDeciderAena(input)
+// equivalence <=> a = -a
+function pumpingLemmaDeciderEquivalence(input)
 {
 
 	// set the value of the strings
@@ -229,8 +224,8 @@ We are taking the string, s, such that s is in c1 + x + c2 on the left hand side
 
 ``` js
 // c1 + x + c2 != c1 -x + c2
-// anena => a != -a 
-function pumpingLemmaDeciderAnena(input)
+// reversal <=> a != -a 
+function pumpingLemmaDeciderReversal(input)
 {
 	// set the value of the strings
 	var c1_1 = "abcdefg ";
