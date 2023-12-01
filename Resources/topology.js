@@ -235,7 +235,8 @@ function pumpingLemmaDeciderReversal(input)
 		{
 			// decide if the current substring that is of the input is equal to the string of x
 			if (input.substring(x+xstr.length*y,x+y*xstr.length+xstr.length) !== xstr)
-			{
+			{ 
+			  console.log(input.substring(x+xstr.length*y,x+y*xstr.length+xstr.length));
 				path.push("0");
 				finishY = true;
 				break;
@@ -246,7 +247,11 @@ function pumpingLemmaDeciderReversal(input)
 		}
 	}
 
-	path.pop();
+  if (Number(path[path.length - 1]) === 0)
+  {
+    path.pop();
+  }
+	
 
 	// decider for c2 for reversal of a != -a
 	var c2 = c2_1 + c2_2;
@@ -265,6 +270,7 @@ function pumpingLemmaDeciderReversal(input)
 		{
 			if (input[x + y*xstr.length + z] !== c2[i])
 			{
+			  console.log(input[x + y*xstr.length + z],c2[i]);
 				path.push("0");
 				finishZ = true;
 				break;
@@ -281,7 +287,16 @@ function pumpingLemmaDeciderReversal(input)
 		finishZ = true;
 	}
 
-	console.log(path);
+  var pIndex = 0;
+  console.log(path);
+  while (pIndex < path.length)
+  {
+    if (Number(path[pIndex]) === 0)
+    {
+      return false;
+    }
+    pIndex++;
+  }
 
 	return true;
 }
