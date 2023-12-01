@@ -1,0 +1,18 @@
+message: "If you want to cite this article, please cite it as below."
+authors:
+- family-names: "Eric"
+  given-names: "Ung"
+  orcid: "https://orcid.org/0009-0008-6122-4557"
+title: "Topology of Javascript"
+date-released: 2024-02-01
+url: "https://github.com/ericung/TopologyOfJavascript"
+preferred-citation:
+  url: "https://github.com/ericung/TopologyOfJavascript"
+  type: article
+  authors:
+  - family-names: "Ung"
+    given-names: "Eric"
+    orcid: "https://orcid.org/0009-0008-6122-4557"
+  title: "Topology Of Javascript"
+  date-released: 2024-02-01
+  year: 2024
